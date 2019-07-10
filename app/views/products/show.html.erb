@@ -1,0 +1,21 @@
+<h1 align="center" class="m-5">Detalles del producto</h1>
+<div class="container">
+	<table class="table">
+			<thead class="bg-secondary">
+				<tr class="text-white text-center">
+					<th style="text-align: center; border: 1px solid #aaa">Product</th>
+					<th style="text-align: center; border: 1px solid #aaa">Description</th>
+					<th style="text-align: center; border: 1px solid #aaa">Price</th>
+					<th style="text-align: center; border: 1px solid #aaa">User</th>
+				</tr>			
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align: center; border: 1px solid #aaa"><%= @product.name %></td>
+					<td style="text-align: center; border: 1px solid #aaa"><%= @product.description %></td>
+					<td style="text-align: center; border: 1px solid #aaa"><%= @product.price %></td>
+					<td style="text-align: center; border: 1px solid #aaa"><%= @product.user.present? ? @product.user.name : "Sin usuario asociado" %></td>
+				</tr>
+		</tbody>
+	</table>	
+</div>

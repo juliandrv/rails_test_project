@@ -1,0 +1,27 @@
+<h1 align="center" class="mb-5">Nuevo producto</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col"></div>
+		<div class="col">
+			<%= form_for @product do |f| %>
+					<div class="form-group">
+						<%= f.label "Product Name" %>
+						<%= f.text_field :name, class: "form-control", placeholder: "Ingrese el nombre del producto" %>
+					</div>
+					<div class="form-group">
+						<%= f.label "Price" %>
+						<%= f.number_field :price, class: "form-control", placeholder: "Ingrese el precio del producto" %>
+					</div>
+					<div class="form-group">
+						<%= f.label "Description" %>
+						<%= f.text_area :description, class: "form-control", placeholder: "Ingrese la descripción del producto" %>
+					</div>
+					<div class="form-group">
+						<%= f.submit "CREAR PRODUCTO", class: "btn btn-danger text-white font-weight-bold" %>
+					</div>
+			<% end %>
+		</div>
+	<div class="col"></div>
+	</div>
+</div>

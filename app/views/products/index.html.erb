@@ -1,0 +1,33 @@
+<h1 align="center" class="mb-5">Products</h1>
+<div class="container">
+	<div class="row mb-3" align="right">
+		<div class="col"></div>
+	  <div class="col"></div>
+	  <div class="col">
+	  	<%= link_to "NUEVO PRODUCTO", new_product_path, class: "btn btn-danger font-weight-bold" %>
+	  </div>
+	</div>
+	<table class="table">
+		<thead class="bg-secondary">
+			<tr class="text-white text-center">
+				<th style="border: 1px solid #aaa">Product</th>
+				<th style="border: 1px solid #aaa">Description</th>
+				<th style="border: 1px solid #aaa">Price</th>
+				<th style="border: 1px solid #aaa">User</th>
+				<th style="border: 1px solid #aaa">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @products.each do |product| %>
+				<tr class="text-center">
+					<td style="border: 1px solid #aaa"><%= product.name %></td>
+					<td style="border: 1px solid #aaa"><%= product.description %></td>
+					<td style="border: 1px solid #aaa"><%= product.price %></td>
+					<td style="border: 1px solid #aaa"><%= product.user.present? ? product.user.name : "Sin usuario asociado" %></td>
+					<td style="text-align: center; border: 1px solid #aaa"><span class="btn btn-danger"><%= link_to "Ver Producto", product_path(product.id), class: "text-white font-weight-bold" %></span></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+</table>

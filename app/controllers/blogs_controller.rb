@@ -3,6 +3,8 @@ class BlogsController < ApplicationController
 	end
 
 	def create
+		## Aquí hace el guardado a la base de datos y una vez termine:
+		redirect_to blogs_path
 	end
 
 	def new
