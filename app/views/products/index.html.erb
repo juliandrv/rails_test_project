@@ -4,7 +4,7 @@
 		<div class="col"></div>
 	  <div class="col"></div>
 	  <div class="col">
-	  	<%= link_to "NUEVO PRODUCTO", new_product_path, class: "btn btn-danger font-weight-bold" %>
+	  	<%= link_to "NUEVO PRODUCTO", new_product_path, class: "btn btn-warning font-weight-bold" %>
 	  </div>
 	</div>
 	<table class="table">
@@ -24,7 +24,11 @@
 					<td style="border: 1px solid #aaa"><%= product.description %></td>
 					<td style="border: 1px solid #aaa"><%= product.price %></td>
 					<td style="border: 1px solid #aaa"><%= product.user.present? ? product.user.name : "Sin usuario asociado" %></td>
-					<td style="text-align: center; border: 1px solid #aaa"><span class="btn btn-danger"><%= link_to "Ver Producto", product_path(product.id), class: "text-white font-weight-bold" %></span></td>
+					<td style="text-align: center; border: 1px solid #aaa">
+						<%= link_to "VER", product_path(product.id), class: "text-white btn btn-info font-weight-bold" %>
+						<%= link_to "EDITAR", edit_product_path(product.id), class: "text-white font-weight-bold btn btn-success" %>
+						<%= link_to "ELIMNAR", product_path(product.id), method: :delete, data: { confirm: "¿Estás seguro/a de eliminar el producto?" }, class: "text-white font-weight-bold btn btn-danger" %>
+					</td>
 				</tr>
 			<% end %>
 		</tbody>
