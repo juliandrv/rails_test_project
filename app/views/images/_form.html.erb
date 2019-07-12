@@ -1,0 +1,25 @@
+<div class="container">
+	<div class="row">
+		<div class="col"></div>
+		<div class="col">
+			<%= form_for @image do |f| %>
+					<div class="form-group">
+						<%= f.label "Image Name" %>
+						<%= f.text_field :name, class: "form-control", placeholder: "Ingrese el nombre del imagen" %>
+					</div>
+					<div class="form-group">
+						<%= f.label "Url" %>
+						<%= f.text_field :url, class: "form-control", placeholder: "Ingrese la url de la imagen" %>
+					</div>
+					<div class="form-group">
+						<%= f.label "Alt" %>
+						<%= f.text_area :alt, class: "form-control", placeholder: "Ingrese el alt de la imagen" %>
+					</div>
+					<div class="form-group">
+						<%= f.submit "#{name_button}", class: "btn btn-danger text-white font-weight-bold" %>
+					</div>
+			<% end %>
+		</div>
+	<div class="col"></div>
+	</div>
+</div>
